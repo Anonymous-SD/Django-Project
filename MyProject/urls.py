@@ -25,6 +25,7 @@ from django.urls import path
 
 urlpatterns = [
 	url(r'^myApp/', include('myApp.urls')),
+	url(r'^userApp/', include('userApp.urls')),
 	# path('', views.index, name = 'index'),
     path('admin/', admin.site.urls),
 
