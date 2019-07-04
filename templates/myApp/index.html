@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{ my_title }}</title>
+
+	<link rel="stylesheet" href="{% static 'css/mystyle.css' %}" />
+	</head>
+<body>
+
+<h1>This is an index page</h1>
+<p> {{ insert_me }} </p>
+
+	<div class="DbData">
+
+		{% if access_records %}
+		
+		<table>
+			<thead>
+			<th>Site Name</th><th>Date Accessed</th>
+			</thead>
+			<tbody>
+
+				{% for data in access_records %}
+				<tr><td>{{ data.name }}</td><td>{{ data.date }}</td></tr>
+				{% endfor %}
+
+			</tbody>
+		</table>
+
+		{% else %}
+		<p> No Access data present </p>
+		{% endif %}
+
+	</div>
+
+</body>
+</html>

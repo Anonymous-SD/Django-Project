@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Form </title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class='container'>
+
+		<div class='jumbotron'>
+			<h1> Please fill out this form </h1>
+			<form method='POST'>
+
+				<div class = 'form-group'>
+
+					{% csrf_token %}
+					{{ form.as_p }}
+
+				</div>
+				<input type='submit' class='btn btn-submit' />
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
