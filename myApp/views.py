@@ -21,6 +21,13 @@ def formView(request):
 
 	form = forms.MyForm()
 
+	if request.method == 'POST':
+		form = forms.MyForm(request.POST)
+		if form.is_valid():
+			print(form.cleaned_data['name'])
+			print(form.cleaned_data['email'])
+			print(form.cleaned_data['text'])
+
 	context = {
 	'form' : form
 	}
