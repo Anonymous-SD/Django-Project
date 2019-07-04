@@ -6,7 +6,8 @@ from . import forms
 
 def indexView(request):
 
-	return render(request, 'userApp/index.html')
+	context = { 'title': 'Index'}
+	return render(request, 'userApp/index.html', context)
 
 
 def signUpView(request):
@@ -21,7 +22,8 @@ def signUpView(request):
 			return indexView(request)
 
 	context = {
-	'form' : form
+	'form' : form,
+	'title': 'Sign Up'
 	}
 
 	return render(request, 'userApp/signup.html', context)
